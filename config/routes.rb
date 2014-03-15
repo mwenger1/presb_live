@@ -1,4 +1,6 @@
 PresbLive::Application.routes.draw do
+  resources :users
+
   root "home#index"
 
   get '/intro' => "home#intro"
