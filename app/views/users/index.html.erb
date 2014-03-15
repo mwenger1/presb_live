@@ -1,20 +1,11 @@
-<h1>Listing users</h1>
+<h1>Search users</h1>
 
 <table>
   <thead>
     <tr>
       <th>Name</th>
-      <th>Email address</th>
-      <th>Password</th>
-      <th>Dob</th>
-      <th>In hospital</th>
-      <th>Searchable by age</th>
-      <th>Searchable by condition</th>
-      <th>Is caregiver</th>
-      <th>Dependant dob</th>
-      <th></th>
-      <th></th>
-      <th></th>
+      <th>Interests</th>
+      <th>Health</th>
     </tr>
   </thead>
 
@@ -24,20 +15,8 @@
         <td><%= user.name %></td>
         <td><%= user.email_address %></td>
         <td><%= user.password %></td>
-        <td><%= user.dob %></td>
-        <td><%= user.in_hospital %></td>
-        <td><%= user.searchable_by_age %></td>
-        <td><%= user.searchable_by_condition %></td>
-        <td><%= user.is_caregiver %></td>
-        <td><%= user.dependant_dob %></td>
-        <td><%= link_to 'Show', user %></td>
-        <td><%= link_to 'Edit', edit_user_path(user) %></td>
-        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New User', new_user_path %>
