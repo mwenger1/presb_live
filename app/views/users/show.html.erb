@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @user.name %>
+</p>
+
+<p>
+  <strong>Email address:</strong>
+  <%= @user.email_address %>
+</p>
+
+<p>
+  <strong>Password:</strong>
+  <%= @user.password %>
+</p>
+
+<p>
+  <strong>Dob:</strong>
+  <%= @user.dob %>
+</p>
+
+<p>
+  <strong>In hospital:</strong>
+  <%= @user.in_hospital %>
+</p>
+
+<p>
+  <strong>Searchable by age:</strong>
+  <%= @user.searchable_by_age %>
+</p>
+
+<p>
+  <strong>Searchable by condition:</strong>
+  <%= @user.searchable_by_condition %>
+</p>
+
+<p>
+  <strong>Is caregiver:</strong>
+  <%= @user.is_caregiver %>
+</p>
+
+<p>
+  <strong>Dependant dob:</strong>
+  <%= @user.dependant_dob %>
+</p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
