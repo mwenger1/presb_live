@@ -1,5 +1,8 @@
 PresbLive::Application.routes.draw do
-  get "home/index"
+  root "home#index"
+
+  get '/intro' => "home#intro"
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
