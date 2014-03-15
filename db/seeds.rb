@@ -78,3 +78,20 @@ Tag.create(name: 'Yoga')
 Tag.create(name: 'Yo-yoing')
 
 puts "Finished with tags"
+
+puts "Adding users"
+
+u = User.create(name: "Mike Wenger", email_address: "michaelwenger27@gmail.com", password: "password", dob: "28 Feb 1987", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+rand(1..5).times do |g|
+    u.tags << Tag.where(id: rand(1..60))
+end
+u.save
+
+u = User.create(name: "Andrea cremese", email_address: "michaelwenger27@gmail.com", password: "password", dob: "28 Feb 1987", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+rand(1..5).times do |g|
+    u.tags << Tag.where(id: rand(1..60))
+end
+u.save
+
+puts "Finished adding users"
+
