@@ -17,20 +17,25 @@
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_area :description %>
   </div>
-
   <div class="field">
     <%= f.label :datetime %><br>
-    <%= f.datetime_select :datetime %>
+    <%= f.datetime_local_field :datetime %>
   </div>
+  <script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
+  
+  <div class="hangout-line"><div class="g-hangout" data-render="createhangout"></div>
+  <div class="field fld-recordable">
+    <%= f.label :recordable do %>
+      <%= f.check_box :recordable %>
+      Post on YouTube?
+    <% end %>
+  </div>
+</div>
   <div class="field">
     <%= f.label :max_participants %><br>
     <%= f.number_field :max_participants %>
-  </div>
-  <div class="field">
-    <%= f.label :recordable %><br>
-    <%= f.check_box :recordable %>
   </div>
 <!--   <div class="field">
     <%= f.label :hangout_url %><br>

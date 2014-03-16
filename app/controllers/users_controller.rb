@@ -26,6 +26,8 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)
 
+    add_tags_to_user
+
     respond_to do |format|
       if @user.save
         session[:user_id] = @user.id
@@ -39,6 +41,9 @@ class UsersController < ApplicationController
   # PATCH/PUT /users/1
   # PATCH/PUT /users/1.json
   def update
+
+    add_tags_to_user
+    
     respond_to do |format|
       if @user.update(user_params)
         session[:user_id] = @user.id
