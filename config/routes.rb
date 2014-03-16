@@ -1,4 +1,6 @@
 PresbLive::Application.routes.draw do
+  resources :models
+
   resources :users
 
   root "home#index"
