@@ -15,6 +15,11 @@
 .tablet img{
   width: 100%;
 }
+.dashboard img{
+  position: relative;
+  top: -39px;
+  left: -30px;
+}
 .pageWrapper{
 	background: url('/assets/pageWrapper.png') center no-repeat;
 	width: 100%;
