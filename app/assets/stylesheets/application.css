@@ -121,6 +121,24 @@ left: -114px;
   margin-top: 2px;
   cursor:pointer;
 }
+.hangouts_list{
+  display:inline;
+  float:right;
+}
+
+.hangoutTitle{
+  display: inline-block;
+  width: 540px;
+}
+
+.hangouts_list span {
+  padding:4px;
+  margin-right:4px;
+  background-color:white;
+}
+.hangouts_list:hover span {
+  color: #333;
+}
 
 
 .expandIcon {color: #666;
@@ -130,7 +148,10 @@ float: right;
 margin-right: 12px;
 text-shadow: 1px 1px white;}
 
-.expandableHangout:hover {background-color:#999; color:white;}
+.expandableHangout:hover {background-color:#999;}
+.expandableHangout:hover .hangoutTitle{
+  color:white;
+}
 
 .expandIcon {color: #666;
 font-weight: bold;

@@ -21,12 +21,11 @@ ready = function() {
 console.log('this worked');
   $('.expandableHangout').on("click",function () {
     $(this).next().slideToggle();
-        var arrowPosition = $(".expandableHangout .expandIcon").html();
+        var arrowPosition = $(".expandIcon",this).html();
         if (arrowPosition == "▼") {
-            $(".expandableHangout .expandIcon").html("&#9650;");
+            $(".expandIcon", this).html("&#9650;");
         } else {
-            console.log('test3');
-            $(".expandableHangout .expandIcon").html("▼");
+            $(".expandIcon", this).html("▼");
         }
     });
 
