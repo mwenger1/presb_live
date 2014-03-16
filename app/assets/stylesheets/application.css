@@ -13,6 +13,9 @@
  *= require_tree .
  */
 
+h1{
+  text-transform: uppercase;
+}
 .dashboard img{
   position: relative;
   top: -39px;
@@ -28,6 +31,9 @@
 
 #user_tags_chosen{
    margin-top: 20px;
+}
+#new_hangout{
+
 }
 /*Index*/
 .mainContent{
