@@ -24,12 +24,12 @@
     <%= f.datetime_local_field :datetime %>
   </div>
   <script type="text/javascript" src="https://apis.google.com/js/platform.js"></script>
-  
+
   <div class="hangout-line">
   <div class="field fld-recordable">
     <%= f.label :recordable do %>
       <%= f.check_box :recordable %>
-      Post on YouTube?
+      Post hangout on YouTube?
     <% end %>
   </div>
 </div>
@@ -50,9 +50,8 @@
     <%= f.label :tags %><br>
     <%= f.collection_select(:tags, Tag.all, :id, :name,{include_hidden: false, :selected => @hangout.tag_ids}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
   </div>
-
+<br>
   <div class="actions">
   <div class="g-hangout" data-render="createhangout"></div>
-    <%= f.submit "Add Your Hangout", :class => 'btn createHangout' %>
   </div>
 <% end %>

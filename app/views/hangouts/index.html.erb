@@ -55,8 +55,10 @@
 
     </div>
   <div class="hiddenHangoutText" style="display:none;">
-        <%= hangout.description %><br>
-        Maximum number of participants: <%= hangout.max_participants %>
+        <div class="hiddenText">
+        <%= hangout.description %><br><br>
+        Maximum attendees: <%= hangout.max_participants %>
+      </div>
     <%= link_to 'Join Hangout', "https://talkgadget.google.com/hangouts/_/76cpj7nrbfjsiatvea2h5sascg?hl=en", class: "btn createHangout pull_right", target: "_blank" %>
     <div style="clear:both;"></div>
   </div>
@@ -83,8 +85,10 @@
 
   </div>
   <div class="hiddenHangoutText" style="display:none;">
-        <%= hangout.description %><br>
-        Maximum number of participants: <%= hangout.max_participants %>
+       <div class="hiddenText">
+        <%= hangout.description %><br><br>
+        Maximum attendees: <%= hangout.max_participants %>
+      </div>
     <%= link_to 'Add to Calendar', hangout, class: "btn createHangout pull_right" %>
     <div style="clear:both;"></div>
   </div>
