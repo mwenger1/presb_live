@@ -84,7 +84,7 @@ left: -114px;
  border-left: 4px solid #5d8989; 
 }
 .upcoming .expandableHangout{
-  border-left: 4px solid #fcfad8;
+  border-left: 4px solid #d14e20;
 }
 .your h2{
   background: #61b3e3;
@@ -97,8 +97,9 @@ left: -114px;
       color: #fff;
 }
 .upcoming h2{
-  background: #fcfad8;
-    padding: 10px;
+  background: #d14e20;
+   padding: 10px;
+   color: #fff;
 }
 /*Landing Page */
 /*.videoBox{
