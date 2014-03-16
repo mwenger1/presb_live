@@ -1,0 +1,45 @@
+<%= form_for(@hangout) do |f| %>
+  <% if @hangout.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@hangout.errors.count, "error") %> prohibited this hangout from being saved:</h2>
+
+      <ul>
+      <% @hangout.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :datetime %><br>
+    <%= f.datetime_select :datetime %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :max_participants %><br>
+    <%= f.number_field :max_participants %>
+  </div>
+  <div class="field">
+    <%= f.label :recordable %><br>
+    <%= f.check_box :recordable %>
+  </div>
+  <div class="field">
+    <%= f.label :hangout_url %><br>
+    <%= f.text_field :hangout_url %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+  <div class="field">
+    <%= f.label :user_id %><br>
+    <%= f.text_field :user_id %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

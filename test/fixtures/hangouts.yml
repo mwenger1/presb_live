@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  datetime: 2014-03-15 20:25:59
+  title: MyString
+  max_participants: 1
+  recordable: false
+  hangout_url: MyString
+  description: MyString
+  user_id: 
+
+two:
+  datetime: 2014-03-15 20:25:59
+  title: MyString
+  max_participants: 1
+  recordable: false
+  hangout_url: MyString
+  description: MyString
+  user_id: 

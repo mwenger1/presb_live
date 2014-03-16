@@ -1,4 +1,6 @@
 PresbLive::Application.routes.draw do
+  resources :hangouts
+
   resources :users
 
   root "home#index"
