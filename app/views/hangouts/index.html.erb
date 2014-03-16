@@ -30,11 +30,11 @@
   <% end %>
 </div>
   <%= render 'search' %>
-  
+
   <div class="happening">
   <% if @happening_hangouts.present? %>
 
-    <h2>Happening Hangouts</h2>
+    <h2>Happening Now</h2>
     <% @happening_hangouts.each do |hangout| %>
     <div class="expandableHangout">
       <div class="hangoutTitle">
@@ -63,7 +63,7 @@
 </div>
   <div class="upcoming">
   <% if @upcoming_hangouts.present? %>
-  <h2>Upcoming Hangouts</h2>
+  <h2>Upcoming</h2>
   <% @upcoming_hangouts.each do |hangout| %>
   <div class="expandableHangout">
     <div class="hangoutTitle">

@@ -1,13 +1,9 @@
  <%= form_tag("", method: "get", id: "search") do %>
  <p style="text-align:right;">
-   Displaying
-   <%= pluralize(@hangout_count, "hangout") %>
-   filtered by <%= collection_select(:hangout, :tags, Tag.all, :id, :name,{include_hidden: false, :selected => @tags.collect {|t| t.id}}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
+
+   <%= collection_select(:hangout, :tags, Tag.all, :id, :name,{include_hidden: false, :selected => @tags.collect {|t| t.id}}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
    	<%= hidden_field_tag "search", true %>
-	<%= submit_tag "GO!"%>
+	<%= submit_tag "GO!", class:"btn createHangout", style:"padding: 4px 15px;" %>
    </p>
  <% end %>
 
-
-
-<%= button_to "I want to see ALL!!", hangouts_path("", method: "get",:hangout => {:all => true})  %>
