@@ -12,6 +12,12 @@
  *= require chosen
  *= require_tree .
  */
+.hiddenText{
+  float: left;
+font-size: 1.4em;
+line-height: 1.2em;
+width: 70%;
+}
 #new_hangout{
   background: #ededed;
   padding: 20px;

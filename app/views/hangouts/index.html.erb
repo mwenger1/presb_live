@@ -19,8 +19,11 @@
     </div>
   </div>
   <div class="hiddenHangoutText" style="display:none;">
-        <%= hangout.description %><br>
-        Maximum number of participants: <%= hangout.max_participants %>
+  <div class="hiddenText">
+        <%= hangout.description %><br />
+        <br />
+        Maximum attendees: <%= hangout.max_participants %>
+      </div>
     <%= link_to 'Edit Your Hangout', edit_hangout_path(hangout), class: "btn createHangout pull_right" %>
     <div style="clear:both;"></div>
 
