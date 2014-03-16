@@ -28,6 +28,7 @@
   width: 850px;
   padding: 10px;
   margin: 0 auto;
+  color:;
 }
 .mainTitle:before{
   content: url('/assets/pHangouts3.png') no-repeat;
@@ -37,6 +38,14 @@
 }
 .mainTitle{
   display: inline-block;
+  font-size: 1.5em;
+  -webkit-margin-before: 0.83em;
+  -webkit-margin-after: 0.83em;
+  -webkit-margin-start: 0px;
+  -webkit-margin-end: 0px;
+  font-weight: bold;
+  color: #333;
+  text-decoration:none;
 }
 .rightCallouts{
   margin-top: 5px;
