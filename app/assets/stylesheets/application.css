@@ -57,14 +57,62 @@ left: -114px;
 .mainTitle{
   display: inline-block;
   font-size: 1.5em;
-  -webkit-margin-before: 0.83em;
-  -webkit-margin-after: 0.83em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
   font-weight: bold;
   color: #333;
   text-decoration:none;
+  margin-bottom: 40px;
 }
+/*Landing Page */
+/*.videoBox{
+  background: url('/assets/videoBox.png') no-repeat;
+}*/
+.youtube{
+  float: left;
+  display: inline-block;
+  margin-bottom: 40px;
+  margin-top: -124px;
+}
+.youtubeCover{
+  color: grey;
+  opacity: 0.5;
+}
+.textLeft{
+  position: absolute;
+  display: inline-block;
+  width: 88%;
+  height: 400px;
+  background: grey;
+  opacity: .8;
+}
+.landingTagline{
+  text-align: center;
+  background-color: #61b3e3;
+  padding: 10px 20px;
+  display:block;
+  color: #fff;
+}
+.landingTitle{
+ line-height: 1.6em;
+  color: #0f787a;
+  position: relative;
+  top: 100px;
+  z-index: 1;
+  display: inline;
+  font-size: 3em;
+  background: #fff;
+  left: 40px;
+  padding: 5px;
+}
+.join{
+  padding: 10px 20px  !important;
+  z-index: 100;
+  position: relative;
+  display: inline  !important;
+  top: 167px;
+  left: -370px;
+  font-size: 23px  !important;
+}
+
 .rightCallouts{
   margin-top: 5px;
   float: right;
