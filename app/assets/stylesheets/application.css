@@ -12,19 +12,21 @@
  *= require_tree .
  */
 .pageWrapper{
-	background: url('/assets/pageWrapper.png') no-repeat;
+	background: url('/assets/pageWrapper.png') center no-repeat;
 	width: 100%;
 	height: 100%;
+  background-color:#e3eceb;
 }
 
 
 /*Index*/
 .mainContent{
-  position: absolute;
-  top: 147px;
-  left: 92px;
-  width: 872px;
-  padding: 10px 0 0 20px;
+  position: relative;
+  top: -500px;
+  left: 52px;
+  width: 850px;
+  padding: 10px;
+  margin: 0 auto;
 }
 .mainTitle:before{
   content: url('/assets/pHangouts3.png') no-repeat;

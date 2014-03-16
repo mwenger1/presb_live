@@ -28,11 +28,9 @@ class HangoutsController < ApplicationController
 
     respond_to do |format|
       if @hangout.save
-        format.html { redirect_to @hangout, notice: 'Hangout was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @hangout }
+        format.html { redirect_to hangouts_path, notice: 'Hangout was successfully created.' }
       else
         format.html { render action: 'new' }
-        format.json { render json: @hangout.errors, status: :unprocessable_entity }
       end
     end
   end
