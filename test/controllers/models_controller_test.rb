@@ -18,7 +18,7 @@ class ModelsControllerTest < ActionController::TestCase
 
   test "should create model" do
     assert_difference('Model.count') do
-      post :create, model: { Hangout: @model.Hangout, datetime: @model.datetime, description: @model.description, hangout_url: @model.hangout_url, max_participants: @model.max_participants, recordable: @model.recordable, title: @model.title }
+      post :create, model: { Hangout: @model.Hangout, datetime: @model.datetime, description: @model.description, hangout_url: @model.hangout_url, max_participants: @model.max_participants, recordable: @model.recordable, title: @model.title, user_id: @model.user_id }
     end
 
     assert_redirected_to model_path(assigns(:model))
@@ -35,7 +35,7 @@ class ModelsControllerTest < ActionController::TestCase
   end
 
   test "should update model" do
-    patch :update, id: @model, model: { Hangout: @model.Hangout, datetime: @model.datetime, description: @model.description, hangout_url: @model.hangout_url, max_participants: @model.max_participants, recordable: @model.recordable, title: @model.title }
+    patch :update, id: @model, model: { Hangout: @model.Hangout, datetime: @model.datetime, description: @model.description, hangout_url: @model.hangout_url, max_participants: @model.max_participants, recordable: @model.recordable, title: @model.title, user_id: @model.user_id }
     assert_redirected_to model_path(assigns(:model))
   end
 

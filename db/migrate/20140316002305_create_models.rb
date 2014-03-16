@@ -8,6 +8,7 @@ class CreateModels < ActiveRecord::Migration
       t.boolean :recordable
       t.string :hangout_url
       t.string :description
+      t.belongs_to :user, index: true
 
       t.timestamps
     end

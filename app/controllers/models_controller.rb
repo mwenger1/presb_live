@@ -69,6 +69,6 @@ class ModelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def model_params
-      params.require(:model).permit(:Hangout, :datetime, :title, :max_participants, :recordable, :hangout_url, :description)
+      params.require(:model).permit(:Hangout, :datetime, :title, :max_participants, :recordable, :hangout_url, :description, :user_id)
     end
 end

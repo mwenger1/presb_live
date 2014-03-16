@@ -2,18 +2,20 @@
 
 one:
   Hangout: MyString
-  datetime: 2014-03-15 20:21:24
+  datetime: 2014-03-15 20:23:05
   title: MyString
   max_participants: 1
   recordable: false
   hangout_url: MyString
   description: MyString
+  user_id: 
 
 two:
   Hangout: MyString
-  datetime: 2014-03-15 20:21:24
+  datetime: 2014-03-15 20:23:05
   title: MyString
   max_participants: 1
   recordable: false
   hangout_url: MyString
   description: MyString
+  user_id: 

@@ -10,6 +10,7 @@
       <th>Recordable</th>
       <th>Hangout url</th>
       <th>Description</th>
+      <th>User</th>
       <th></th>
       <th></th>
       <th></th>
@@ -26,6 +27,7 @@
         <td><%= model.recordable %></td>
         <td><%= model.hangout_url %></td>
         <td><%= model.description %></td>
+        <td><%= model.user %></td>
         <td><%= link_to 'Show', model %></td>
         <td><%= link_to 'Edit', edit_model_path(model) %></td>
         <td><%= link_to 'Destroy', model, method: :delete, data: { confirm: 'Are you sure?' } %></td>
