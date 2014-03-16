@@ -12,6 +12,7 @@
  *= require chosen
  *= require_tree .
  */
+
 .dashboard img{
   position: relative;
   top: -39px;
@@ -19,7 +20,17 @@
   width: 891px;
 }
 
-
+.edit_user{
+  background-color: #ededed;
+  padding: 20px;
+  text-align: center;
+}
+.field label{
+  font-size: 25px;
+}
+#user_tags_chosen{
+   margin-top: 20px;
+}
 /*Index*/
 .mainContent{
   width: 850px;

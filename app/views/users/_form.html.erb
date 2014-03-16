@@ -1,3 +1,8 @@
+<style>
+ .question{
+  margin-bottom: 10px;
+ }
+</style>
 <%= form_for(@user) do |f| %>
   <% if @user.errors.any? %>
     <div id="error_explanation">
@@ -12,7 +17,7 @@
   <% end %>
   <div class="field">
 
-    <%= f.label :tags, 'What kind of hangouts are you interested in?' %><br>
+    <%= f.label :tags, 'What kind of hangouts are you interested in?', class:'question' %><br>
     <%= f.collection_select(:tags, Tag.all, :id, :name,{include_hidden: false, :selected => @user.tag_ids}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
   </div>
   <div class="actions">
