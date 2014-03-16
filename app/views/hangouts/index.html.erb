@@ -1,13 +1,14 @@
   <div class="rightCallouts">
-    <%= link_to 'Create a Google Hangout', new_hangout_path, class:"btn createHangout" %></div>
-
+    <%= link_to 'Create a Hangout', new_hangout_path, class:"btn createHangout" %></div>
+<div class="your">
   <% if @user_hangouts.present? %>
   <h2>Your Hangouts</h2>
   <% @user_hangouts.each do |hangout| %>
   <div class="expandableHangout">
     <div class="hangoutTitle">
-      <%= hangout.time %>
-      <%= hangout.title %>
+      <div class="title"><%= hangout.title %></div>
+      <div class="time"><%= hangout.time %></div>
+
     </div>
     <span class="expandIcon">▼</span>
 
@@ -27,26 +28,29 @@
   <br>
   <% end %>
   <% end %>
-
+</div>
   <%= render 'search' %>
-
+  
+  <div class="happening">
   <% if @happening_hangouts.present? %>
-  <h2>Happening Hangouts</h2>
-  <% @happening_hangouts.each do |hangout| %>
-  <div class="expandableHangout">
-    <div class="hangoutTitle">
-      <%= hangout.time %>
-      <%= hangout.title %>
-    </div>
-    <span class="expandIcon">▼</span>
 
-    <div class="hangouts_list">
-    <% hangout.tags.each do |t|  %>
-      <span class="<%= t.name %>"><%= t.name %></span>
-    <% end %>
-    </div>
+    <h2>Happening Hangouts</h2>
+    <% @happening_hangouts.each do |hangout| %>
+    <div class="expandableHangout">
+      <div class="hangoutTitle">
+      <div class="title"><%= hangout.title %></div>
+      <div class="time"><%= hangout.time %></div>
 
-  </div>
+      </div>
+      <span class="expandIcon">▼</span>
+
+      <div class="hangouts_list">
+      <% hangout.tags.each do |t|  %>
+        <span class="<%= t.name %>"><%= t.name %></span>
+      <% end %>
+      </div>
+
+    </div>
   <div class="hiddenHangoutText" style="display:none;">
         <%= hangout.description %><br>
         Maximum number of participants: <%= hangout.max_participants %>
@@ -56,14 +60,15 @@
   <br>
   <% end %>
   <% end %>
-
+</div>
+  <div class="upcoming">
   <% if @upcoming_hangouts.present? %>
   <h2>Upcoming Hangouts</h2>
   <% @upcoming_hangouts.each do |hangout| %>
   <div class="expandableHangout">
     <div class="hangoutTitle">
-      <%= hangout.time %>
-      <%= hangout.title %>
+      <div class="title"><%= hangout.title %></div>
+     <div class="time"><%= hangout.time %></div>
     </div>
     <span class="expandIcon">▼</span>
 
@@ -83,7 +88,7 @@
   <br>
   <% end %>
   <% end %>
-
+</div>
   <br>
 
 <div style="text-align:center;">
