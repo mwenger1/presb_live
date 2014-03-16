@@ -16,6 +16,10 @@
   background: #ededed;
   padding: 20px;
 }
+.chosen-container-multi .chosen-results{
+ text-align: left;
+}
+
 h1{
   text-transform: uppercase;
 }
@@ -116,7 +120,7 @@ left: -84px;
   border-left: 4px solid #61b3e3;
 }
 .happening .expandableHangout{
- border-left: 4px solid #5d8989; 
+ border-left: 4px solid #5d8989;
 }
 .upcoming .expandableHangout{
   border-left: 4px solid #d14e20;
@@ -127,7 +131,7 @@ left: -84px;
   color: #fff;
 }
 .happening h2{
-  background: #5d8989; 
+  background: #5d8989;
     padding: 10px;
       color: #fff;
 }
