@@ -11,7 +11,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140316002559) do
+ActiveRecord::Schema.define(version: 20140316002954) do
+
+  create_table "hangout_health_tags", force: true do |t|
+    t.integer  "health_tag_id"
+    t.integer  "hangout_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hangout_health_tags", ["hangout_id"], name: "index_hangout_health_tags_on_hangout_id"
+  add_index "hangout_health_tags", ["health_tag_id"], name: "index_hangout_health_tags_on_health_tag_id"
+
+  create_table "hangout_tags", force: true do |t|
+    t.integer  "tag_id"
+    t.integer  "hangout_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "hangout_tags", ["hangout_id"], name: "index_hangout_tags_on_hangout_id"
+  add_index "hangout_tags", ["tag_id"], name: "index_hangout_tags_on_tag_id"
 
   create_table "hangouts", force: true do |t|
     t.datetime "datetime"
