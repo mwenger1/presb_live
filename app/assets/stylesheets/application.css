@@ -11,3 +11,8 @@
  *= require_self
  *= require_tree .
  */
+.pageWrapper{
+	background: url('/assets/pageWrapper.png') no-repeat;
+	width: 100%;
+	height: 100%;
+}

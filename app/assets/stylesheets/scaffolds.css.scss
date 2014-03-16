@@ -1,15 +1,83 @@
+
+/*Index*/
+.mainContent{
+  position: absolute;
+  top: 147px;
+  left: 92px;
+  width: 872px;
+  padding: 10px 0 0 20px;
+}
+.mainTitle:before{
+  content: url('/assets/pHangouts3.png') no-repeat;
+  position: relative;
+  top: 14px;
+  margin-right: 10px;
+}
+.mainTitle{
+  display: inline;
+}
+.rightCallouts{
+  margin-top: 5px;
+  float: right;
+  display: inline;
+}
+.rightCallouts div{
+  margin-left: 10px;
+}
+.inbox{
+  width: 30px;
+  height: 30px;
+  padding: 5px;
+  position: relative;
+  top: 10px;
+}
+.inbox img{
+  width: 30px;
+}
+.btn{
+  color: #fff;
+  background-color: #0f787a;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  text-transform: uppercase;
+  box-shadow: 1px 1px 4px grey;
+}
+.createHangout{
+  padding: 10px 15px;
+}
+/* Search */
+.search{
+  background-color: #ededed;
+  padding: 20px;
+  margin: 20px 0px;
+}
+.results{
+  margin: 20px 0px;
+}
+.result{
+  display: inline;
+  margin-left: 10px;
+  background-color: #ededed;
+  padding: 20px;
+}
+
+/* Inherited*/
 body {
   background-color: #fff;
   color: #333;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  height: 635px;
 }
 
 p, ol, ul, td {
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial;
 }
 
 pre {
@@ -30,6 +98,8 @@ a {
 }
 
 div {
+  -webkit-font-smoothing: antialiased;
+  font-family: Arial;
   &.field, &.actions {
     margin-bottom: 10px;
   }
@@ -53,17 +123,22 @@ div {
   margin-bottom: 20px;
   background-color: #f0f0f0;
   h2 {
+    -webkit-font-smoothing: antialiased;
+    font-family: Arial;
     text-align: left;
     font-weight: bold;
     padding: 5px 5px 5px 15px;
     font-size: 12px;
     margin: -7px;
-    margin-bottom: 0px;
     background-color: #c00;
     color: #fff;
+    margin-bottom: 20px;
+    float: left;
   }
   ul li {
     font-size: 12px;
     list-style: square;
+    -webkit-font-smoothing: antialiased;
+    font-family: Arial;
   }
 }
