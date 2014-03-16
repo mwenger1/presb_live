@@ -12,12 +12,17 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :datetime %><br>
-    <%= f.datetime_select :datetime %>
-  </div>
-  <div class="field">
     <%= f.label :title %><br>
     <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br>
+    <%= f.text_field :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :datetime %><br>
+    <%= f.datetime_select :datetime %>
   </div>
   <div class="field">
     <%= f.label :max_participants %><br>
@@ -27,23 +32,20 @@
     <%= f.label :recordable %><br>
     <%= f.check_box :recordable %>
   </div>
-  <div class="field">
+<!--   <div class="field">
     <%= f.label :hangout_url %><br>
     <%= f.text_field :hangout_url %>
-  </div>
-  <div class="field">
-    <%= f.label :description %><br>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
+  </div> -->
+
+<!--   <div class="field">
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
-  </div>
+  </div> -->
   <div class="field">
     <%= f.label :tags %><br>
     <%= f.collection_select(:tags, Tag.all, :id, :name,{include_hidden: false, :selected => @hangout.tag_ids}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
   </div>
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit "Add Your Hangout", :class => 'btn createHangout' %>
   </div>
 <% end %>

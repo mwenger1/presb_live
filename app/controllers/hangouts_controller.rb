@@ -76,9 +76,10 @@ class HangoutsController < ApplicationController
 
     def add_tags_to_hangout
       @hangout.hangout_tags.delete_all
-
-      params[:hangout][:tags].each do |tag_id|
-        @hangout.tags << Tag.find(tag_id.to_i)
+      unless params[:hangout][:tags].nil?
+        params[:hangout][:tags].each do |tag_id|
+          @hangout.tags << Tag.find(tag_id.to_i)
+        end
       end
     end
 end
