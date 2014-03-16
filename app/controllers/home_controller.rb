@@ -3,6 +3,9 @@ class HomeController < ApplicationController
   	render layout: false
   end
 
+  def dashboard
+  end
+
   def intro
   end
 end

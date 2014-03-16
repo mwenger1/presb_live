@@ -10,7 +10,10 @@
 
 	<div class="pageWrapper">&nbsp;</div>
 <div class="mainContent">
+	
+<% unless request.fullpath == "/dashboard" %>
 	<h2 class="mainTitle">Presby Hangouts</h2>
+<% end %>
 <%= yield %>
 </div>
 </body>
