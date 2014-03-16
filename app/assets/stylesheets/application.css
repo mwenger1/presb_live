@@ -33,12 +33,12 @@
   margin-right: 10px;
 }
 .mainTitle{
-  /*display: inline;*/
+  display: inline-block;
 }
 .rightCallouts{
   margin-top: 5px;
   float: right;
-  display: inline;
+  display: inline-block;
 }
 .rightCallouts div{
   margin-left: 10px;
