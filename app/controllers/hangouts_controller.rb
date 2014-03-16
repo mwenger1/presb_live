@@ -49,7 +49,6 @@ class HangoutsController < ApplicationController
     add_tags_to_hangout
 
     @hangout.user_id = session[:user_id]
-    @hangout.save
     respond_to do |format|
       if @hangout.save
         format.html { redirect_to hangouts_path, notice: 'Hangout was successfully created.' }
