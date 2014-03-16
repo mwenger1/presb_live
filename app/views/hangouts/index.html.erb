@@ -49,7 +49,7 @@
   <div class="hiddenHangoutText" style="display:none;">
         <%= hangout.description %><br>
         Maximum number of participants: <%= hangout.max_participants %>
-    <%= link_to 'Join Hangout', hangout %>
+    <%= link_to 'Join Hangout', ENV["HO_URL"], :target => "_blank" %>
   </div>
   <br>
   <% end %>
