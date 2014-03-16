@@ -8,15 +8,10 @@
 
 puts "Adding tags"
 
-Tag.create(name: 'A vintage scrapbook')
-Tag.create(name: 'Animal fancying')
-Tag.create(name: 'Amateur radio[1]')
-Tag.create(name: 'Audiophilia')
-Tag.create(name: 'Baton twirling')
-Tag.create(name: 'Bboying')
+Tag.create(name: '3D Printing')
+Tag.create(name: 'Aviation')
+Tag.create(name: 'Affordable Healthcare')
 Tag.create(name: 'Blogging')
-Tag.create(name: 'Chainmail making')
-Tag.create(name: 'Coloring')
 Tag.create(name: 'Computer programming')
 Tag.create(name: 'Conlanging')
 Tag.create(name: 'Cooking')
@@ -238,7 +233,7 @@ h.tags << Tag.where(name: "Drawing")
 h.save
 
 h = Hangout.create(datetime: time_now,
-  title:'Arsenal back on the right track" Trashed THE SPURS one - nil. Back in the title game!!',
+  title:'Arsenal pulls ahead to take the lead against the Spurs!!',
   description: 'I was very worried about the latest on Arsenal. After loosing at Man U it seemed the season was gone. We then went off Champions tooo =(. We are talking about the Gunners victory on Spurs. If you are a spurs fan join us, we are just really talking soccer!!',
   max_participants: '9', recordable: false,
   user_id: u4.id)
