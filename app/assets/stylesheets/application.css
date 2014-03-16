@@ -64,6 +64,9 @@
   text-transform: uppercase;
   box-shadow: 1px 1px 4px grey;
 }
+.btn:hover{
+  background-color: #169da0;
+}
 .createHangout{
   padding: 10px 15px;
 }
