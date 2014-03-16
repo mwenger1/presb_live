@@ -12,7 +12,10 @@
  *= require chosen
  *= require_tree .
  */
-
+#new_hangout{
+  background: #ededed;
+  padding: 20px;
+}
 h1{
   text-transform: uppercase;
 }
