@@ -25,9 +25,7 @@
   padding: 20px;
   text-align: center;
 }
-.field label{
-  font-size: 25px;
-}
+
 #user_tags_chosen{
    margin-top: 20px;
 }
@@ -215,6 +213,19 @@ width: 738px;
   width: 30px;
 }
 .btn{
+ align-items: flex-start;
+text-align: center;
+cursor: pointer;
+color: buttontext;
+padding: 2px 6px 3px;
+border: 2px outset buttonface;
+border-image-source: initial;
+border-image-slice: initial;
+border-image-width: initial;
+border-image-outset: initial;
+border-image-repeat: initial;
+background-color: buttonface;
+box-sizing: border-box;
   color: #fff;
   background-color: #0f787a;
   text-align: center;
@@ -222,6 +233,8 @@ width: 738px;
   font-size: 16px;
   text-transform: uppercase;
   box-shadow: 1px 1px 4px grey;
+  font-weight: bold;
+
 }
 .btn:hover{
   background-color: #169da0;
