@@ -74,7 +74,9 @@ class HangoutsController < ApplicationController
 
     if @hangout_count << 0
       @hangout_count = 0
-    end 
+    end
+    @happening_hangouts.uniq!
+    @upcoming_hangouts.uniq!
   end
 
   # GET /hangouts/1
