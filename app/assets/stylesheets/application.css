@@ -20,6 +20,9 @@
   top: -39px;
   left: -30px;
 }
+body{
+  margin:0;
+}
 .pageWrapper{
 	background: url('/assets/pageWrapper.png') center no-repeat;
 	width: 100%;
