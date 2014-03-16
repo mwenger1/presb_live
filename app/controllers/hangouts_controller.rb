@@ -17,6 +17,7 @@ class HangoutsController < ApplicationController
       end
     end
 
+    @tags = Tag.all
   end
 
   # GET /hangouts/1

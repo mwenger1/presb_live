@@ -2,10 +2,6 @@
 		<%= link_to 'Create a Google Hangout', new_hangout_path, class:"btn createHangout" %>
 	</div>
 
-<%= render 'search' %>
-
-
-
  <% if @user_hangouts.present? %>
   <h2>Your Hangouts</h2>
   <% @user_hangouts.each do |hangout| %>
@@ -17,6 +13,10 @@
       <br>
   <% end %>
  <% end %>
+
+
+<%= render 'search' %>
+
 
  <% if @community_hangouts.present? %>
   <h2>Happening Events</h2>
