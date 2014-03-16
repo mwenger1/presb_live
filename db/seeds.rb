@@ -80,18 +80,24 @@ Tag.create(name: 'Yo-yoing')
 puts "Finished with tags"
 
 puts "Starting healthtags"
-Healthtag.create(name: 'Broken Back')
-Healthtag.create(name: 'Pediatric asthma')
-Healthtag.create(name: 'Febrile neutropenia')
-Healthtag.create(name: 'Cystic Fibrosis')
-Healthtag.create(name: 'Chemotherapy induction')
-Healthtag.create(name: 'Pneumonia')
-Healthtag.create(name: 'Cellulitis')
-Healthtag.create(name: 'Prenatal Care')
+HealthTag.create(name: 'Broken Back')
+HealthTag.create(name: 'Pediatric asthma')
+HealthTag.create(name: 'Febrile neutropenia')
+HealthTag.create(name: 'Cystic Fibrosis')
+HealthTag.create(name: 'Chemotherapy induction')
+HealthTag.create(name: 'Pneumonia')
+HealthTag.create(name: 'Cellulitis')
+HealthTag.create(name: 'Prenatal Care')
+HealthTag.create(name: 'Spinal fracture')
+HealthTag.create(name: 'CABG')
+HealthTag.create(name: 'CHF')
+HealthTag.create(name: 'Intensive post-CVA Rehab')
+HealthTag.create(name: 'Influenza in the elderly')
+HealthTag.create(name: 'Confusion')
 puts "ending healthtags"
 
 puts "Starting hangouts"
-Hangout.create(datetime: '2014-03-16 19:29:01 -0400', title: 'Prenatal Care', max_participants: '20', recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: 'Sally Suthers will be providing an overview of nutrition and health during the third trimester.', user_id: '1')
+h = Hangout.create(datetime: '2014-03-16 19:29:01 -0400', title: 'Prenatal Care', max_participants: '20', recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: 'Sally Suthers will be providing an overview of nutrition and health during the third trimester.', user_id: '1')
 h.health_tags << HealthTag.where(name: "Prenatal Care")
 h.save
 
