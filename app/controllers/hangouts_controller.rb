@@ -4,7 +4,7 @@ class HangoutsController < ApplicationController
   # GET /hangouts
   # GET /hangouts.json
   def index
-    @hangouts = Hangout.all
+    @hangouts = Hangout.all.order("datetime ASC")
     session[:user_id] = "" unless session[:user_id].present?
 
     @user_hangouts = Array.new

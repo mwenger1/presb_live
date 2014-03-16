@@ -25,9 +25,9 @@ class Hangout < ActiveRecord::Base
 
     def time
         if self.datetime.to_date == Date.today
-            "Today " + self.datetime.strftime("%l%p")
+            "Today " + self.datetime.strftime("%l%P")
         else
-            self.datetime.strftime("%-m/%d") + " " + self.datetime.strftime("%l%p")
+            self.datetime.strftime("%-m/%d") + " " + self.datetime.strftime("%l%P")
         end
     end
 end
