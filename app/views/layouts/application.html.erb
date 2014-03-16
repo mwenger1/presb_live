@@ -8,20 +8,21 @@
 </head>
 <body>
 
-	<div class="pageWrapper">&nbsp;</div>
-<div class="mainContent">
+	<div class="pageWrapper"><div class="mainContent">
+
 <%= link_to image_tag('/assets/homeButtom.png'), dashboard_path, class:"pHangoutButton2" %>
 
 <%= link_to image_tag('/assets/in_app_button.png'), intro_path, class:"pHangoutButton" %>
 <div style="clear:both"></div>
-
+<div class="white-background">
 <% unless request.fullpath == "/dashboard" %>
 	<a href="/hangouts" class="mainTitle">Presby Hangouts</a>
 <% end %>
 <%= yield %>
-<div style="background-color:#276162; height:10px; margin-top:40px;"></div>
+</div>
+<div style="background-color:#276162; height:10px; padding-left: 35px; padding-right: 35px; width: 820px;"></div>
 
 </div>
-
+</div>
 </body>
 </html>
