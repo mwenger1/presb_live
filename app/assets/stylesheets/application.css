@@ -58,7 +58,7 @@ left: -114px;
   display: inline-block;
   font-size: 1.5em;
   font-weight: bold;
-  color: #333;
+  color: #d86b40;
   text-decoration:none;
   margin-bottom: 40px;
 }
@@ -85,7 +85,13 @@ left: -114px;
   opacity: .8;
 }
 .landingTagline{
-
+  width: 90%;
+  margin-bottom: 20px;
+}
+.form{
+  background: #ededed;
+  padding: 30px;
+  border-radius: 15px;
 }
 .landingTitle{
  line-height: 1.6em;
@@ -99,7 +105,15 @@ left: -114px;
   left: 40px;
   padding: 5px;
 }
-.join{
+.intro{
+  background-color: #d86b40;
+  padding: 12px 8px;
+  color: #fff;
+}
+.about{
+  padding: 5px 10px;
+}
+#join{
   padding: 10px 20px  !important;
   z-index: 100;
   position: relative;
@@ -108,7 +122,13 @@ left: -114px;
   left: -370px;
   font-size: 23px  !important;
 }
-
+#joinBottom{
+  padding: 10px 20px  !important;
+  position: relative;
+  display: inline  !important;
+  left: 10px;
+  font-size: 23px  !important;
+}
 .rightCallouts{
   margin-top: 5px;
   float: right;
