@@ -5,26 +5,65 @@ class HangoutsController < ApplicationController
   # GET /hangouts.json
   def index
     @hangouts = Hangout.all.order("datetime ASC")
-    session[:user_id] = "" unless session[:user_id].present?
+    session[:user_id] = 1 unless session[:user_id].present?
+
+
+  # this hijacks the normal flow and filters by tags
+    if params[:search].eql?("true")
+      if params[:hangout].nil?
+        @hangouts = User.find(session[:user_id]).hangouts
+      else
+        if params[:hangout][:all] == 'true'
+          this_is_an_all_search 
+        end
+        extract_hangouts_by_tags
+      end
+    else
+      @hangouts = User.find(session[:user_id]).hangouts
+    end
 
     @user_hangouts = Array.new
+
     @upcoming_hangouts = Array.new
     @happening_hangouts = Array.new
 
-    @hangouts.each do |hangout|
-      if hangout.is_user_hangout? session[:user_id]
-        @user_hangouts << hangout
+    @user_hangouts = User.find(session[:user_id]).hangouts
+
+    #if it is a search i filter on ly the array
+    if params[:search].eql?("true")
+      if params[:hangout].nil?
+        @hangouts = @hangouts-@user_hangouts
       else
+      @hangouts = @hangout_filtered_by_tag
+      end      
+    else
+      @hangouts = @hangouts-@user_hangouts
+    end
+
+    @hangouts.each do |hangout|
         if hangout.is_live?
           @happening_hangouts << hangout
         else
           @upcoming_hangouts << hangout
         end
-      end
     end
 
-    @tags = Tag.all
+
+    if params[:search].eql?("true")
+      if params[:hangout].nil?
+        @tags = User.find(session[:user_id]).tags
+      else
+       @tags = @filtered_tags
+      end
+    else
+      @tags = User.find(session[:user_id]).tags
+    end
+
     @hangout_count = @hangouts.count - @user_hangouts.count
+
+    if @hangout_count << 0
+      @hangout_count = 0
+    end 
   end
 
   # GET /hangouts/1
@@ -94,7 +133,7 @@ class HangoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hangout_params
-      params.require(:hangout).permit(:datetime, :title, :max_participants, :recordable, :hangout_url, :description, :user_id)
+      params.require(:hangout).permit(:datetime, :title, :max_participants, :recordable, :hangout_url, :description, :user_id, :all)
     end
 
     def add_tags_to_hangout
@@ -105,4 +144,27 @@ class HangoutsController < ApplicationController
         end
       end
     end
+
+    def extract_hangouts_by_tags
+
+      unless params[:hangout][:tags].nil?
+        @hangout_filtered_by_tag = []
+        @filtered_tags = []
+        params[:hangout][:tags].each do |tag_id|
+          tag = Tag.find(tag_id.to_i)
+          @filtered_tags << tag
+          tag.hangouts.each do |hangout|
+            @hangout_filtered_by_tag << hangout
+
+          end
+        end
+      end
+      @hangout_filtered_by_tag.compact!
+      @hangout_filtered_by_tag.uniq!
+    end
+
+    def this_is_an_all_search
+      array = Tag.all.collect {|t| "#{t.id}"}
+      params[:hangout] << {:tags => array}
+   end
 end
