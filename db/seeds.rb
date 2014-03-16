@@ -94,7 +94,7 @@ Tag.create(name: 'Soccer')
 Tag.create(name: 'Football')
 Tag.create(name: 'Caregiving')
 Tag.create(name: 'Kids')
-Tag.create(name: 'Homeworks')
+Tag.create(name: 'Homework')
 puts "ending healthtags"
 
 
@@ -102,9 +102,9 @@ puts "Adding users"
 
 u = User.create(name: "Tommy Zigler", email_address: "tommy@gmail.com", password: "password", dob: "28 Feb 1987", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
 rand(1..5).times do |g|
-    u.tags << Tag.where(name: 'Chemotherapy')
+    u.tags << Tag.where(name: 'Cystic Fibrosis')
     u.tags << Tag.where(name: 'Drawing')
-    u.tags << Tag.where(name: 'Homeworks')
+    u.tags << Tag.where(name: 'Homework')
 end
 u.save
 u1 = u 
@@ -242,7 +242,7 @@ h.tags << Tag.where(name: "Drawing")
 h.save
 
 h = Hangout.create(datetime: time_now,
-  title:'Arsenal back on the right track" Trashed THE SPURS one - nil',
+  title:'Arsenal back on the right track" Trashed THE SPURS one - nil. Back in the title game!!',
   description: 'I was very worried about the latest on Arsenal. After loosing at Man U it seemed the season was gone. We then went off Champions tooo =(. We are talking about the Gunners victory on Spurs. If you are a spurs fan join us, we are just really talking soccer!!', 
   max_participants: '9', recordable: false, 
   user_id: u4.id)
@@ -254,7 +254,7 @@ h = Hangout.create(datetime: time_now,
   description: 'I am locked in the hospital for the treatment. Not sure what I have, but my mum seems worried. Any one has time for play? Wanna watch together the last Sponge Bob', 
   max_participants: '6', recordable: false, 
   user_id: u3.id)
-h.tags << Tag.where(name: "Chemotherapy")
+h.tags << Tag.where(name: "Cystic Fibrosis")
 h.save
 
 # these are relevat to the presentation case, happning in future
@@ -273,7 +273,7 @@ h = Hangout.create(datetime: time_future,
   description: 'Am here at Presbyterian for treatment quite often. Doing homeworks is more fun if you know you have some time to play / talk with someone afterwards', 
   max_participants: '9', recordable: false, 
   user_id: u4.id)
-h.tags << Tag.where(name: "Homeworks")
+h.tags << Tag.where(name: "Homework")
 h.save
 
 
