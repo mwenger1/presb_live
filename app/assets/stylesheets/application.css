@@ -15,6 +15,11 @@
 .tablet img{
   width: 100%;
 }
+.dashboard img{
+  position: relative;
+  top: -39px;
+  left: -30px;
+}
 .pageWrapper{
 	background: url('/assets/pageWrapper.png') center no-repeat;
 	width: 100%;
@@ -52,13 +57,77 @@ left: -114px;
 .mainTitle{
   display: inline-block;
   font-size: 1.5em;
-  -webkit-margin-before: 0.83em;
-  -webkit-margin-after: 0.83em;
-  -webkit-margin-start: 0px;
-  -webkit-margin-end: 0px;
   font-weight: bold;
-  color: #333;
+  color: #d86b40;
   text-decoration:none;
+  margin-bottom: 40px;
+}
+/*Landing Page */
+/*.videoBox{
+  background: url('/assets/videoBox.png') no-repeat;
+}*/
+.youtube{
+  float: left;
+  display: inline-block;
+  margin-bottom: 40px;
+  margin-top: -124px;
+}
+.youtubeCover{
+  color: grey;
+  opacity: 0.5;
+}
+.textLeft{
+  position: absolute;
+  display: inline-block;
+  width: 88%;
+  height: 400px;
+  background: grey;
+  opacity: .8;
+}
+.landingTagline{
+  width: 90%;
+  margin-bottom: 20px;
+}
+.form{
+  background: #ededed;
+  padding: 30px;
+  border-radius: 15px;
+}
+.landingTitle{
+ line-height: 1.6em;
+  color: #0f787a;
+  position: relative;
+  top: 100px;
+  z-index: 1;
+  display: inline;
+  font-size: 3em;
+  background: #fff;
+  left: 40px;
+  padding: 5px;
+}
+.intro{
+  background-color: #d86b40;
+  padding: 12px 8px;
+  color: #fff;
+}
+.about{
+  padding: 5px 10px;
+}
+#join{
+  padding: 10px 20px  !important;
+  z-index: 100;
+  position: relative;
+  display: inline  !important;
+  top: 167px;
+  left: -370px;
+  font-size: 23px  !important;
+}
+#joinBottom{
+  padding: 10px 20px  !important;
+  position: relative;
+  display: inline  !important;
+  left: 10px;
+  font-size: 23px  !important;
 }
 .rightCallouts{
   margin-top: 5px;
