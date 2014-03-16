@@ -28,11 +28,13 @@ class UsersController < ApplicationController
 
     respond_to do |format|
       if @user.save
+        session[:user_id] = @user.id
         format.html { redirect_to hangouts_path, notice: 'User was successfully created.' }
       else
         format.html { render action: 'new' }
       end
     end
+    asdf
   end
 
   # PATCH/PUT /users/1

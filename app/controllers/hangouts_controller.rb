@@ -5,6 +5,18 @@ class HangoutsController < ApplicationController
   # GET /hangouts.json
   def index
     @hangouts = Hangout.all
+    session[:user_id] = "" unless session[:user_id].present?
+
+    @user_hangouts = Array.new
+    @community_hangouts = Array.new
+    @hangouts.each do |hangout|
+      if hangout.is_user_hangout? session[:user_id]
+        @user_hangouts << hangout
+      else
+        @community_hangouts << hangout
+      end
+    end
+
   end
 
   # GET /hangouts/1
@@ -28,6 +40,7 @@ class HangoutsController < ApplicationController
 
     add_tags_to_hangout
 
+    @hangout.user_id = session[:user_id]
     @hangout.save
     respond_to do |format|
       if @hangout.save
@@ -65,6 +78,9 @@ class HangoutsController < ApplicationController
 
   private
     # Use callbacks to share common setup or constraints between actions.
+
+
+
     def set_hangout
       @hangout = Hangout.find(params[:id])
     end

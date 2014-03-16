@@ -6,4 +6,13 @@ class Hangout < ActiveRecord::Base
 
     has_many :hangout_tags
     has_many :tags, through: :hangout_tags
+
+    def is_user_hangout? user_id
+      if user_id == self.user_id
+        true
+      else
+        false
+      end
+    end
+
 end

@@ -4,6 +4,22 @@
 
 <%= render 'search' %>
 
+
+
+ <% if @user_hangouts.present? %>
+  <h2>Your Hangouts</h2>
+  <% @user_hangouts.each do |hangout| %>
+      <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
+      <%= hangout.title %>
+      <%= hangout.max_participants %>
+      <%= link_to 'Show', hangout %>
+    </div>
+      <br>
+  <% end %>
+ <% end %>
+
+ <% if @community_hangouts.present? %>
+  <h2>Happening Events</h2>
   <% @hangouts.each do |hangout| %>
       <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
       <%= hangout.title %>
@@ -12,6 +28,7 @@
     </div>
       <br>
   <% end %>
+<% end %>
 
 <br>
 
