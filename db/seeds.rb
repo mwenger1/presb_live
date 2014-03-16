@@ -76,24 +76,20 @@ Tag.create(name: 'Worldbuilding')
 Tag.create(name: 'Writing')
 Tag.create(name: 'Yoga')
 Tag.create(name: 'Yo-yoing')
-
-puts "Finished with tags"
-
-puts "Starting healthtags"
-HealthTag.create(name: 'Broken Back')
-HealthTag.create(name: 'Pediatric asthma')
-HealthTag.create(name: 'Febrile neutropenia')
-HealthTag.create(name: 'Cystic Fibrosis')
-HealthTag.create(name: 'Chemotherapy induction')
-HealthTag.create(name: 'Pneumonia')
-HealthTag.create(name: 'Cellulitis')
-HealthTag.create(name: 'Prenatal Care')
-HealthTag.create(name: 'Spinal fracture')
-HealthTag.create(name: 'CABG')
-HealthTag.create(name: 'CHF')
-HealthTag.create(name: 'Intensive post-CVA Rehab')
-HealthTag.create(name: 'Influenza in the elderly')
-HealthTag.create(name: 'Confusion')
+Tag.create(name: 'Broken Back')
+Tag.create(name: 'Pediatric asthma')
+Tag.create(name: 'Febrile neutropenia')
+Tag.create(name: 'Cystic Fibrosis')
+Tag.create(name: 'Chemotherapy induction')
+Tag.create(name: 'Pneumonia')
+Tag.create(name: 'Cellulitis')
+Tag.create(name: 'Prenatal Care')
+Tag.create(name: 'Spinal fracture')
+Tag.create(name: 'CABG')
+Tag.create(name: 'CHF')
+Tag.create(name: 'Intensive post-CVA Rehab')
+Tag.create(name: 'Influenza in the elderly')
+Tag.create(name: 'Confusion')
 puts "ending healthtags"
 
 puts "Starting hangouts"
@@ -114,13 +110,13 @@ puts "Adding users"
 
 u = User.create(name: "Mike Wenger", email_address: "michaelwenger27@gmail.com", password: "password", dob: "28 Feb 1987", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
 rand(1..5).times do |g|
-    u.tags << Tag.where(id: rand(1..60))
+    u.tags << Tag.where(id: rand(1..80))
 end
 u.save
 
 u = User.create(name: "Andrea cremese", email_address: "andrea@gmail.com", password: "password", dob: "28 Feb 1981", in_hospital: false, searchable_by_age: false, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
 rand(1..5).times do |g|
-    u.tags << Tag.where(id: rand(1..60))
+    u.tags << Tag.where(id: rand(1..80))
 end
 u.save
 
