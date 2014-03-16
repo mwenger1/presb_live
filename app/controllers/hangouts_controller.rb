@@ -7,11 +7,15 @@ class HangoutsController < ApplicationController
     @hangouts = Hangout.all.order("datetime ASC")
     session[:user_id] = 1 unless session[:user_id].present?
 
+
   # this hijacks the normal flow and filters by tags
     if params[:search].eql?("true")
       if params[:hangout].nil?
         @hangouts = User.find(session[:user_id]).hangouts
       else
+        if params[:hangout][:all] == 'true'
+          this_is_an_all_search 
+        end
         extract_hangouts_by_tags
       end
     else
@@ -130,7 +134,7 @@ class HangoutsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def hangout_params
-      params.require(:hangout).permit(:datetime, :title, :max_participants, :recordable, :hangout_url, :description, :user_id)
+      params.require(:hangout).permit(:datetime, :title, :max_participants, :recordable, :hangout_url, :description, :user_id, :all)
     end
 
     def add_tags_to_hangout
@@ -159,4 +163,9 @@ class HangoutsController < ApplicationController
       @hangout_filtered_by_tag.compact!
       @hangout_filtered_by_tag.uniq!
     end
+
+    def this_is_an_all_search
+      array = Tag.all.collect {|t| "#{t.id}"}
+      params[:hangout] << {:tags => array}
+   end
 end

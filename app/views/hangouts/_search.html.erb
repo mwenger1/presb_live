@@ -1,4 +1,4 @@
- <%= form_tag("", method: "get", id: "search", :params => {:serach => true}) do %>
+ <%= form_tag("", method: "get", id: "search") do %>
  <p style="text-align:right;">
    Displaying
    <%= pluralize(@hangout_count, "hangout") %>
@@ -7,3 +7,7 @@
 	<%= submit_tag "GO!"%>
    </p>
  <% end %>
+
+
+
+<%= button_to "I want to see ALL!!", hangouts_path("", method: "get",:hangout => {:all => true})  %>
