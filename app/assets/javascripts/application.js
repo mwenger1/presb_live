@@ -15,3 +15,24 @@
 //= require chosen-jquery
 //= require turbolinks
 //= require_tree .
+
+var ready;
+ready = function() {
+console.log('this worked');
+  $('.expandableHangout').on("click",function () {
+    $(this).next().slideToggle();
+        var arrowPosition = $(".expandableHangout .expandIcon").html();
+        if (arrowPosition == "▼") {
+            $(".expandableHangout .expandIcon").html("&#9650;");
+        } else {
+            console.log('test3');
+            $(".expandableHangout .expandIcon").html("▼");
+        }
+    });
+
+
+
+};
+
+$(document).ready(ready);
+$(document).on('page:load', ready);

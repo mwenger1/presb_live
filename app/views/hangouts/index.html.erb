@@ -4,11 +4,16 @@
   <% if @user_hangouts.present? %>
   <h2>Your Hangouts</h2>
   <% @user_hangouts.each do |hangout| %>
-  <div class="result">
+  <div class="expandableHangout">
     <%= hangout.time %>
     <%= hangout.title %>
     <%= hangout.max_participants %>
-    <%= link_to 'Show', hangout %></div>
+    <%= link_to 'Show', hangout %>
+    <span class="expandIcon">▼</span>
+  </div>
+  <div class="hiddenHangoutText" style="display:none;">
+    test
+  </div>
   <br>
   <% end %>
   <% end %>
@@ -18,11 +23,16 @@
   <% if @happening_hangouts.present? %>
   <h2>Happening Hangouts</h2>
   <% @happening_hangouts.each do |hangout| %>
-  <div class="result">
+  <div class="expandableHangout">
     <%= hangout.time %>
     <%= hangout.title %>
     <%= hangout.max_participants %>
-    <%= link_to 'Show', hangout %></div>
+    <%= link_to 'Show', hangout %>
+    <span class="expandIcon">▼</span>
+  </div>
+  <div class="hiddenHangoutText" style="display:none;">
+    test
+  </div>
   <br>
   <% end %>
   <% end %>
@@ -30,11 +40,16 @@
   <% if @upcoming_hangouts.present? %>
   <h2>Upcoming Hangouts</h2>
   <% @upcoming_hangouts.each do |hangout| %>
-  <div class="result">
+  <div class="expandableHangout">
     <%= hangout.time %>
     <%= hangout.title %>
     <%= hangout.max_participants %>
-    <%= link_to 'Show', hangout %></div>
+    <%= link_to 'Show', hangout %>
+    <span class="expandIcon">▼</span>
+  </div>
+  <div class="hiddenHangoutText" style="display:none;">
+    test
+  </div>
   <br>
   <% end %>
   <% end %>

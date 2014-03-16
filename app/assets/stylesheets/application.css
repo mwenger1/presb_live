@@ -108,3 +108,44 @@ left: -114px;
   background-color: #ededed;
   padding: 20px;
 }
+
+.expandableHangout {
+  background-color: #e8e8e8;
+  font-weight:bold;
+  display: block;
+  line-height: 36px;
+  padding-left: 20px;
+  padding-right: 2px;
+  color: #333;
+  font-size: 14px;
+  margin-top: 2px;
+  cursor:pointer;
+}
+
+
+.expandIcon {color: #666;
+font-weight: bold;
+font-size: 20px;
+float: right;
+margin-right: 12px;
+text-shadow: 1px 1px white;}
+
+.expandableHangout:hover {background-color:#999; color:white;}
+
+.expandIcon {color: #666;
+font-weight: bold;
+font-size: 20px;
+float: right;
+margin-right: 12px;
+text-shadow: 1px 1px white;}
+
+.expandableHangout:hover .expandIcon {
+    color:white;
+    text-shadow: 1px 1px #666;
+}
+
+.hiddenHangoutText{
+  padding: 10px 30px;
+  color: #666;
+  border: 2px solid #F5F5F5;
+}
