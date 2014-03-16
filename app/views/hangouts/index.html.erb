@@ -1,14 +1,18 @@
-<h1>Listing hangouts</h1>
+	<div class="rightCallouts">
+			<div class="btn inbox"><img src="/assets/messages.png" /></div>
+		<div class="btn createHangout">Create a Google Hangout</div>
+
+	</div>
 
 <%= render 'search' %>
 
   <% @hangouts.each do |hangout| %>
-      <%= hangout.datetime.strftime("%m/%d") %>
+      <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
       <%= hangout.title %>
       <%= hangout.max_participants %>
       <%= hangout.recordable %>
       <%= link_to 'Show', hangout %>
-      <%= link_to 'Edit', edit_hangout_path(hangout) %>
+      <%= link_to 'Edit', edit_hangout_path(hangout) %></div>
       <br>
   <% end %>
 

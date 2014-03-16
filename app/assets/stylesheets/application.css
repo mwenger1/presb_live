@@ -75,7 +75,7 @@
   margin: 20px 0px;
 }
 .result{
-  display: inline;
+  display: block;
   margin-left: 10px;
   background-color: #ededed;
   padding: 20px;
