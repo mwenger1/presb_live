@@ -7,6 +7,7 @@ PresbLive::Application.routes.draw do
 
   get '/intro' => "home#intro"
   get '/dashboard' => "home#dashboard"
+  get '/overview' => "home#overview"
 
 
   # The priority is based upon order of creation: first created -> highest priority.

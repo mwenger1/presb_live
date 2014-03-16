@@ -10,8 +10,13 @@ class HangoutsController < ApplicationController
 
   # this hijacks the normal flow and filters by tags
     if params[:search].eql?("true")
-      if params[:hangout].nil?
-        @hangouts = User.find(session[:user_id]).hangouts
+        if params[:hangout].nil?
+        @hangouts = []
+        User.find(session[:user_id]).tags.each do |tag|
+          tag.hangouts.each do |hangout|
+            @hangouts << hangout
+          end
+        end
       else
         if params[:hangout][:all] == 'true'
           this_is_an_all_search 
@@ -19,7 +24,13 @@ class HangoutsController < ApplicationController
         extract_hangouts_by_tags
       end
     else
-      @hangouts = User.find(session[:user_id]).hangouts
+      @hangouts = []
+      User.find(session[:user_id]).tags.each do |tag|
+        tag.hangouts.each do |hangout|
+          @hangouts << hangout
+        end
+      end
+
     end
 
     @user_hangouts = Array.new
