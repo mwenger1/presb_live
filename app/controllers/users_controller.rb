@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   # GET /users/new
   def new
-    @user = User.new
+    @user = User.first
   end
 
   # GET /users/1/edit
@@ -34,7 +34,6 @@ class UsersController < ApplicationController
         format.html { render action: 'new' }
       end
     end
-    asdf
   end
 
   # PATCH/PUT /users/1
@@ -42,7 +41,8 @@ class UsersController < ApplicationController
   def update
     respond_to do |format|
       if @user.update(user_params)
-        format.html { redirect_to @user, notice: 'User was successfully updated.' }
+        session[:user_id] = @user.id
+        format.html { redirect_to hangouts_path, notice: 'User was successfully updated.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
@@ -70,5 +70,14 @@ class UsersController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def user_params
       params.require(:user).permit(:name, :email_address, :password, :dob, :in_hospital, :searchable_by_age, :searchable_by_condition, :is_caregiver, :dependant_dob)
+    end
+
+    def add_tags_to_user
+      @user.user_tags.delete_all
+      unless params[:user][:tags].nil?
+        params[:user][:tags].each do |tag_id|
+          @user.tags << Tag.find(tag_id.to_i)
+        end
+      end
     end
 end

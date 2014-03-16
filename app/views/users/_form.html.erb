@@ -10,42 +10,10 @@
       </ul>
     </div>
   <% end %>
+  <div class="field">
 
-  <div class="field">
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div class="field">
-    <%= f.label :email_address %><br>
-    <%= f.text_field :email_address %>
-  </div>
-  <div class="field">
-    <%= f.label :password %><br>
-    <%= f.text_field :password %>
-  </div>
-  <div class="field">
-    <%= f.label :dob %><br>
-    <%= f.date_select :dob %>
-  </div>
-  <div class="field">
-    <%= f.label :in_hospital %><br>
-    <%= f.check_box :in_hospital %>
-  </div>
-  <div class="field">
-    <%= f.label :searchable_by_age %><br>
-    <%= f.check_box :searchable_by_age %>
-  </div>
-  <div class="field">
-    <%= f.label :searchable_by_condition %><br>
-    <%= f.check_box :searchable_by_condition %>
-  </div>
-  <div class="field">
-    <%= f.label :is_caregiver %><br>
-    <%= f.check_box :is_caregiver %>
-  </div>
-  <div class="field">
-    <%= f.label :dependant_dob %><br>
-    <%= f.date_select :dependant_dob %>
+    <%= f.label :tags, 'What kind of hangouts are you interested in?' %><br>
+    <%= f.collection_select(:tags, Tag.all, :id, :name,{include_hidden: false, :selected => @user.tag_ids}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
   </div>
   <div class="actions">
     <%= f.submit 'View Your Hangouts', :class => 'btn createHangout' %>

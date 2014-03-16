@@ -7,6 +7,7 @@ class HomeController < ApplicationController
   end
 
   def intro
+    @user = User.first
   end
 end
 
