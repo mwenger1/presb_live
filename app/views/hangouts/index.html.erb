@@ -1,5 +1,7 @@
 <h1>Listing hangouts</h1>
 
+<%= render 'search' %>
+
   <% @hangouts.each do |hangout| %>
       <%= hangout.datetime.strftime("%m/%d") %>
       <%= hangout.title %>
