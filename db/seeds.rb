@@ -81,7 +81,28 @@ puts "Finished with tags"
 
 puts "Starting healthtags"
 Healthtag.create(name: 'Broken Back')
+Healthtag.create(name: 'Pediatric asthma')
+Healthtag.create(name: 'Febrile neutropenia')
+Healthtag.create(name: 'Cystic Fibrosis')
+Healthtag.create(name: 'Chemotherapy induction')
+Healthtag.create(name: 'Pneumonia')
+Healthtag.create(name: 'Cellulitis')
+Healthtag.create(name: 'Prenatal Care')
 puts "ending healthtags"
+
+puts "Starting hangouts"
+Hangout.create(datetime: '2014-03-16 19:29:01 -0400', title: 'Prenatal Care', max_participants: '20', recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: 'Sally Suthers will be providing an overview of nutrition and health during the third trimester.', user_id: '1')
+h.health_tags << HealthTag.where(name: "Prenatal Care")
+h.save
+
+
+h = Hangout.create(datetime: '2014-03-17 19:29:01 -0400', title: 'Kids Group Drawing', max_participants: '20', recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: 'Group hangout to draw collaboratively with others.', user_id: '2')
+h.tags << Tag.where(name: "Drawing")
+h.save
+
+
+puts "ending hangouts"
+
 
 puts "Adding users"
 
