@@ -87,6 +87,13 @@ left: -84px;
 .title{
 
 }
+.images img{
+  display: inline;
+  border: 4px solid #ededed;
+  margin: 10px 5px;
+  text-align: center;
+  width: 30%;
+}
 .your .expandableHangout{
   border-left: 4px solid #61b3e3;
 }
