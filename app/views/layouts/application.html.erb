@@ -10,6 +10,10 @@
 
 	<div class="pageWrapper">&nbsp;</div>
 <div class="mainContent">
+<%= link_to image_tag('/assets/homeButtom.png'), dashboard_path, class:"pHangoutButton2" %>
+
+<%= link_to image_tag('/assets/in_app_button.png'), intro_path, class:"pHangoutButton" %>
+<div style="clear:both"></div>
 	
 <% unless request.fullpath == "/dashboard" %>
 	<h2 class="mainTitle">Presby Hangouts</h2>

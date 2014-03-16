@@ -11,18 +11,31 @@
  *= require_self
  *= require_tree .
  */
+.tablet img{
+  width: 100%;
+}
 .pageWrapper{
 	background: url('/assets/pageWrapper.png') center no-repeat;
 	width: 100%;
 	height: 100%;
   background-color:#e3eceb;
 }
-
+.pHangoutButton img{
+  width: 84px;
+  position: relative;
+top: 141px;
+left: -202px;
+}
+.pHangoutButton2 img{
+  position: relative;
+top: 53px;
+left: -114px;
+}
 
 /*Index*/
 .mainContent{
   position: relative;
-  top: -500px;
+  top: -590px;;
   left: 52px;
   width: 850px;
   padding: 10px;
