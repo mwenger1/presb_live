@@ -1,12 +1,9 @@
-
-  <%= form_tag("", method: "get", id: "ot") do %>
-
-  <p style="text-align:right;">
-    Displaying
-    <%= pluralize(@hangout_count, "hangout") %>
-    filtered by
-<!-- NEED TO ADD ALL TAGS OPTION -->
-<%= select_tag(:test, options_for_select(@tags.map { |value| [ value.name, value.id ] })) %>
-    </p>
-
-  <% end %>
+ <%= form_tag("", method: "get", id: "search", :params => {:serach => true}) do %>
+ <p style="text-align:right;">
+   Displaying
+   <%= pluralize(@hangout_count, "hangout") %>
+   filtered by <%= collection_select(:hangout, :tags, Tag.all, :id, :name,{include_hidden: false, :selected => @tags.collect {|t| t.id}}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
+   	<%= hidden_field_tag "search", true %>
+	<%= submit_tag "GO!"%>
+   </p>
+ <% end %>
