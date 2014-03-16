@@ -25,6 +25,9 @@
   padding: 20px;
   text-align: center;
 }
+.field label{
+  font-size: 25px;
+}
 #user_tags_chosen{
    margin-top: 20px;
 }
