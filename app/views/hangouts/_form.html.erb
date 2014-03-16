@@ -39,6 +39,10 @@
     <%= f.label :user_id %><br>
     <%= f.text_field :user_id %>
   </div>
+  <div class="field">
+    <%= f.label :tags %><br>
+    <%= f.collection_select(:tags, Tag.all, :id, :name,{include_hidden: false, :selected => @hangout.tag_ids}, {multiple: true, :class => "chzn-hangout", "data-placeholder" => "Select tags"}) %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>

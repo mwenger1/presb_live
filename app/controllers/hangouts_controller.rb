@@ -26,6 +26,9 @@ class HangoutsController < ApplicationController
   def create
     @hangout = Hangout.new(hangout_params)
 
+    add_tags_to_hangout
+
+    @hangout.save
     respond_to do |format|
       if @hangout.save
         format.html { redirect_to @hangout, notice: 'Hangout was successfully created.' }
@@ -40,6 +43,7 @@ class HangoutsController < ApplicationController
   # PATCH/PUT /hangouts/1
   # PATCH/PUT /hangouts/1.json
   def update
+    add_tags_to_hangout
     respond_to do |format|
       if @hangout.update(hangout_params)
         format.html { redirect_to @hangout, notice: 'Hangout was successfully updated.' }
@@ -70,5 +74,13 @@ class HangoutsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def hangout_params
       params.require(:hangout).permit(:datetime, :title, :max_participants, :recordable, :hangout_url, :description, :user_id)
+    end
+
+    def add_tags_to_hangout
+      @hangout.hangout_tags.delete_all
+
+      params[:hangout][:tags].each do |tag_id|
+        @hangout.tags << Tag.find(tag_id.to_i)
+      end
     end
 end

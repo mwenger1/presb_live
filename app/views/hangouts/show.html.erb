@@ -34,6 +34,11 @@
   <strong>User:</strong>
   <%= @hangout.user %>
 </p>
+Tags:
+<% @hangout.tags.each do |tag|%>
+  <p><%= tag.name %></p>
+<% end %>
+
 
 <%= link_to 'Edit', edit_hangout_path(@hangout) %> |
 <%= link_to 'Back', hangouts_path %>
