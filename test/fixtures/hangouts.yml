@@ -1,8 +1,7 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  Hangout: MyString
-  datetime: 2014-03-15 20:23:05
+  datetime: 2014-03-15 20:25:59
   title: MyString
   max_participants: 1
   recordable: false
@@ -11,8 +10,7 @@ one:
   user_id: 
 
 two:
-  Hangout: MyString
-  datetime: 2014-03-15 20:23:05
+  datetime: 2014-03-15 20:25:59
   title: MyString
   max_participants: 1
   recordable: false

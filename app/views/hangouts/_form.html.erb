@@ -1,20 +1,16 @@
-<%= form_for(@model) do |f| %>
-  <% if @model.errors.any? %>
+<%= form_for(@hangout) do |f| %>
+  <% if @hangout.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(@model.errors.count, "error") %> prohibited this model from being saved:</h2>
+      <h2><%= pluralize(@hangout.errors.count, "error") %> prohibited this hangout from being saved:</h2>
 
       <ul>
-      <% @model.errors.full_messages.each do |msg| %>
+      <% @hangout.errors.full_messages.each do |msg| %>
         <li><%= msg %></li>
       <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :Hangout %><br>
-    <%= f.text_field :Hangout %>
-  </div>
   <div class="field">
     <%= f.label :datetime %><br>
     <%= f.datetime_select :datetime %>

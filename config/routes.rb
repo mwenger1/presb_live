@@ -1,5 +1,5 @@
 PresbLive::Application.routes.draw do
-  resources :models
+  resources :hangouts
 
   resources :users
 

@@ -1,7 +1,6 @@
-class CreateModels < ActiveRecord::Migration
+class CreateHangouts < ActiveRecord::Migration
   def change
-    create_table :models do |t|
-      t.string :Hangout
+    create_table :hangouts do |t|
       t.datetime :datetime
       t.string :title
       t.integer :max_participants

@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datetime:</strong>
+  <%= @hangout.datetime %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @hangout.title %>
+</p>
+
+<p>
+  <strong>Max participants:</strong>
+  <%= @hangout.max_participants %>
+</p>
+
+<p>
+  <strong>Recordable:</strong>
+  <%= @hangout.recordable %>
+</p>
+
+<p>
+  <strong>Hangout url:</strong>
+  <%= @hangout.hangout_url %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @hangout.description %>
+</p>
+
+<p>
+  <strong>User:</strong>
+  <%= @hangout.user %>
+</p>
+
+<%= link_to 'Edit', edit_hangout_path(@hangout) %> |
+<%= link_to 'Back', hangouts_path %>
