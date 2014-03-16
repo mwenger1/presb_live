@@ -80,7 +80,7 @@ Tag.create(name: 'Broken Back')
 Tag.create(name: 'Pediatric asthma')
 Tag.create(name: 'Febrile neutropenia')
 Tag.create(name: 'Cystic Fibrosis')
-Tag.create(name: 'Chemotherapy induction')
+Tag.create(name: 'Chemotherapy')
 Tag.create(name: 'Pneumonia')
 Tag.create(name: 'Cellulitis')
 Tag.create(name: 'Prenatal Care')
@@ -89,143 +89,200 @@ Tag.create(name: 'CABG')
 Tag.create(name: 'CHF')
 Tag.create(name: 'Intensive post-CVA Rehab')
 Tag.create(name: 'Influenza in the elderly')
-Tag.create(name: 'Confusion')
+Tag.create(name: 'Cricket')
+Tag.create(name: 'Soccer')
+Tag.create(name: 'Football')
+Tag.create(name: 'Caregiving')
+Tag.create(name: 'Kids')
+Tag.create(name: 'Homeworks')
 puts "ending healthtags"
-
-puts "Starting hangouts"
-h = Hangout.create(datetime: '2014-03-16 19:29:01 -0400', title: 'Prenatal Care', max_participants: '20', recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: 'Sally Suthers will be providing an overview of nutrition and health during the third trimester.', user_id: '1')
-h.health_tags << HealthTag.where(name: "Prenatal Care")
-h.save
-
-
-h = Hangout.create(datetime: '2014-03-17 19:29:01 -0400', title: 'Kids Group Drawing', max_participants: '20', recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: 'Group hangout to draw collaboratively with others.', user_id: '2')
-h.tags << Tag.where(name: "Drawing")
-h.save
-
-
-puts "ending hangouts"
 
 
 puts "Adding users"
 
-u = User.create(name: "Mike Wenger", email_address: "michaelwenger27@gmail.com", password: "password", dob: "28 Feb 1987", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+u = User.create(name: "Tommy Zigler", email_address: "tommy@gmail.com", password: "password", dob: "28 Feb 1987", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
 rand(1..5).times do |g|
-    u.tags << Tag.where(id: rand(1..80))
+    u.tags << Tag.where(name: 'Chemotherapy')
+    u.tags << Tag.where(name: 'Drawing')
+    u.tags << Tag.where(name: 'Homeworks')
 end
 u.save
+u1 = u 
 
-u = User.create(name: "Andrea cremese", email_address: "andrea@gmail.com", password: "password", dob: "28 Feb 1981", in_hospital: false, searchable_by_age: false, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+u = User.create(name: "Andrea Cremese", email_address: "andrea@gmail.com", password: "password", dob: "28 Feb 1981", in_hospital: false, searchable_by_age: false, searchable_by_condition: true, is_caregiver: false, dependant_dob: "", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
 rand(1..5).times do |g|
     u.tags << Tag.where(id: rand(1..80))
 end
 u.save
+u2 = u
+
+u = User.create(name: "Linda Torres", email_address: "torres@gmail.com", password: "password", dob: "28 Feb 1981", in_hospital: false, searchable_by_age: false, searchable_by_condition: false, is_caregiver: true, dependant_dob: "28 Feb 2010", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+rand(1..5).times do |g|
+    u.tags << Tag.where(id: rand(1..80))
+end
+u.save
+u3 = u
+
+u = User.create(name: "Cheril Cranes", email_address: "cheriyl@gmail.com", password: "password", dob: "28 Feb 1981", in_hospital: false, searchable_by_age: false, searchable_by_condition: true, is_caregiver: true, dependant_dob: "25 March 2009", created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+rand(1..5).times do |g|
+    u.tags << Tag.where(id: rand(1..80))
+end
+u.save
+u4 = u
+
+u = User.create(name: "Andy Smalls", email_address: "smalls@gmail.com", password: "password", dob: "01 Dec 2009", in_hospital: true, searchable_by_age: false, searchable_by_condition: true, is_caregiver: false, created_at: "2014-03-15 19:29:01 -0400", updated_at: "2014-03-15 19:29:01 -0400")
+rand(1..5).times do |g|
+    u.tags << Tag.where(id: rand(1..80))
+end
+u.save
+u5 = u
+
+
 
 puts "Finished adding users"
 
-Hangout.create!([
-  {datetime: "2014-03-16 23:29:01", title: "Prenatal Care", max_participants: 20, recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: "Sally Suthers will be providing an overview of nutrition and health during the third trimester.", user_id: 1},
-  {datetime: "2014-03-17 23:29:01", title: "Kids Group Drawing", max_participants: 20, recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: "Group hangout to draw collaboratively with others.", user_id: 2},
-  {datetime: "2014-03-17 15:00:00", title: "Talk to the Cafeteria Executive Chef", max_participants: nil, recordable: true, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: "Chef Jean Stevenson will be talking about changes to the menu this month.", user_id: 2},
-  {datetime: "2014-03-16 01:16:00", title: "Keeping up with School Work while Staying at the Hospital", max_participants: nil, recordable: false, hangout_url: "https://plus.google.com/hangouts/_/72cpi203rt54mb01ihiqkg5lrs?hl=en", description: "Sarah Jan will be talking about how you can take advantage of e-learning to stay on top of your studies during your stay.", user_id: nil}
-])
-HangoutHealthTag.create!([
-  {health_tag_id: 8, hangout_id: 1}
-])
-HangoutTag.create!([
-  {tag_id: 19, hangout_id: 2}
-])
-HealthTag.create!([
-  {name: "Broken Back"},
-  {name: "Pediatric asthma"},
-  {name: "Febrile neutropenia"},
-  {name: "Cystic Fibrosis"},
-  {name: "Chemotherapy induction"},
-  {name: "Pneumonia"},
-  {name: "Cellulitis"},
-  {name: "Prenatal Care"},
-  {name: "Spinal fracture"},
-  {name: "CABG"},
-  {name: "CHF"},
-  {name: "Intensive post-CVA Rehab"},
-  {name: "Influenza in the elderly"},
-  {name: "Confusion"}
-])
-Tag.create!([
-  {name: "A vintage scrapbook"},
-  {name: "Animal fancying"},
-  {name: "Amateur radio[1]"},
-  {name: "Audiophilia"},
-  {name: "Baton twirling"},
-  {name: "Bboying"},
-  {name: "Blogging"},
-  {name: "Chainmail making"},
-  {name: "Coloring"},
-  {name: "Computer programming"},
-  {name: "Conlanging"},
-  {name: "Cooking"},
-  {name: "Cosplaying"},
-  {name: "Creative writing"},
-  {name: "Crocheting"},
-  {name: "Dance"},
-  {name: "Digital arts"},
-  {name: "Drama"},
-  {name: "Drawing"},
-  {name: "Drinking Coffee"},
-  {name: "Eating"},
-  {name: "Embroidery"},
-  {name: "Fantasy Sports"},
-  {name: "Fishkeeping"},
-  {name: "Foreign language learning"},
-  {name: "Gaming (tabletop games and role-playing games)"},
-  {name: "Genealogy"},
-  {name: "Genetic genealogy"},
-  {name: "Herpetoculture"},
-  {name: "Home Movies"},
-  {name: "Homebrewing"},
-  {name: "Jewelry making"},
-  {name: "Juggling"},
-  {name: "Knapping"},
-  {name: "Knitting"},
-  {name: "K-pop"},
-  {name: "Lacemaking"},
-  {name: "Lapidary"},
-  {name: "Leather crafting"},
-  {name: "Lego Building"},
-  {name: "Locksport"},
-  {name: "Magic"},
-  {name: "Modeling"},
-  {name: "Model Building"},
-  {name: "Model Railroading"},
-  {name: "Origami"},
-  {name: "Painting"},
-  {name: "Ping Pong"},
-  {name: "Playing Musical Instrument"},
-  {name: "Pottery"},
-  {name: "Quilting"},
-  {name: "RC cars"},
-  {name: "Reading"},
-  {name: "Scrapbooking"},
-  {name: "Sculpting"},
-  {name: "Sewing"},
-  {name: "Singing"},
-  {name: "Soapmaking"},
-  {name: "Speedsolving"},
-  {name: "Taxidermy"},
-  {name: "Video Gaming"},
-  {name: "Web surfing"},
-  {name: "Wood carving"},
-  {name: "Woodworking"},
-  {name: "Worldbuilding"},
-  {name: "Writing"},
-  {name: "Yoga"},
-  {name: "Yo-yoing"}
-])
-User.create!([
-  {name: "Mike Wenger", email_address: "michaelwenger27@gmail.com", password: "password", dob: "1987-02-28", in_hospital: true, searchable_by_age: true, searchable_by_condition: true, is_caregiver: false, dependant_dob: nil},
-  {name: "Andrea cremese", email_address: "andrea@gmail.com", password: "password", dob: "1981-02-28", in_hospital: false, searchable_by_age: false, searchable_by_condition: true, is_caregiver: false, dependant_dob: nil}
-])
-UserTag.create!([
-  {user_id: 1, tag_id: 57},
-  {user_id: 2, tag_id: 44},
-  {user_id: 2, tag_id: 21}
-])
+
+puts "Starting hangouts"
+time_now = '2014-03-16 01:29:01 -0400'
+time_future = '2014-03-16 18:30:00 -0400'
+
+h = Hangout.create(datetime: time_now, 
+  title: 'Prenatal Care', 
+  max_participants: '20', recordable: true, 
+  description: 'Sally Suthers will be providing an overview of nutrition and health during the third trimester.', 
+  user_id: u2.id)
+h.tags << Tag.where(name: "Prenatal Care")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'Any soccer or cricket lover around?',
+  description: 'Am British and woudl like to chat about soccer while I am here.', 
+  max_participants: '20', recordable: true, 
+  user_id: u3.id)
+h.tags << Tag.where(name: "Soccer")
+h.tags << Tag.where(name: "Football")
+h.save
+
+
+h = Hangout.create(datetime: time_future,
+  title:'Any mum with her kid in chemoterapy wants to connect?',
+  description: 'MY kid started chemoterapy here last week. Any other mum wants to connect. Could use some help from someone that has been through this..', 
+  max_participants: '1', recordable: false, 
+  user_id: u2.id)
+h.tags << Tag.where(name: "Caregiving")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'Am in rehab, anyone wants to play chess?',
+  description: 'Will be here for some time, do you want to play chess', 
+  max_participants: '1', recordable: true, 
+  user_id: u3.id)
+h.tags << Tag.where(name: 'Gaming (tabletop games and role-playing games)')
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'Just had a baby at Presbyterian midtown!!',
+  description: 'Any other neo mum in the neighbourhood? want to connect?', 
+  max_participants: '1', recordable: true, 
+  user_id: u4.id)
+h.tags << Tag.where(name: "Motherhood")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'Just been admitted, v loud neigbour',
+  description: 'have a loud neighborhood that is bothering me? what to do?', 
+  max_participants: '1', recordable: true, 
+  user_id: u2.id)
+h.tags << Tag.where(name: "Motherhood")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'Any math teacher',
+  description: 'I have to be at hospital, i like school but cannot go. anyone willing to help me out with math?', 
+  max_participants: '1', recordable: true, 
+  user_id: u5.id)
+h.tags << Tag.where(name: "Kids")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'wanna kill some time with me by doing origami?',
+  description: 'can you make cool origami? Fancy learning/teaching origami?', 
+  max_participants: '1', recordable: true, 
+  user_id: u2.id)
+h.tags << Tag.where(name: "Origami")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'My grandda has flu',
+  description: 'Am at Presbyterian visiting my grandad with flu here. Woudl like to discuss what omre there is around.', 
+  max_participants: '1', recordable: true, 
+  user_id: u5.id)
+h.tags << Tag.where(name: "Influenza in the elderly")
+h.tags << Tag.where(name: "Caregiving")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'my kid has asthma',
+  description: 'my kid has asthma, any other mum wants to discuss', 
+  max_participants: '1', recordable: false, 
+  user_id: u4.id)
+h.tags << Tag.where(name: "Pediatric asthma")
+h.save
+
+# these are relevat to the presentation case, happning now
+
+
+
+h = Hangout.create(datetime: time_now,
+  title:'Drawing sunsets',
+  description: 'I am keen in drawing oil. Before been admitted I was working on a painting of the sunset on the hudson. Fancy having a chat about that?', 
+  max_participants: '9', recordable: false, 
+  user_id: u2.id)
+h.tags << Tag.where(name: "Drawing")
+h.save
+
+h = Hangout.create(datetime: time_now,
+  title:'Arsenal back on the right track" Trashed THE SPURS one - nil',
+  description: 'I was very worried about the latest on Arsenal. After loosing at Man U it seemed the season was gone. We then went off Champions tooo =(. We are talking about the Gunners victory on Spurs. If you are a spurs fan join us, we are just really talking soccer!!', 
+  max_participants: '9', recordable: false, 
+  user_id: u4.id)
+h.tags << Tag.where(name: "Soccer")
+h.save
+
+h = Hangout.create(datetime: time_now,
+  title:'Locked in hospital =(',
+  description: 'I am locked in the hospital for the treatment. Not sure what I have, but my mum seems worried. Any one has time for play? Wanna watch together the last Sponge Bob', 
+  max_participants: '6', recordable: false, 
+  user_id: u3.id)
+h.tags << Tag.where(name: "Chemotherapy")
+h.save
+
+# these are relevat to the presentation case, happning in future
+
+
+h = Hangout.create(datetime: time_future,
+  title:'Drawing sunsets',
+  description: 'I am keen in drawing oil. Before been admitted I was working on a painting of the sunset on the hudson. Fancy having a chat about that?', 
+  max_participants: '9', recordable: false, 
+  user_id: u4.id)
+h.tags << Tag.where(name: "Drawing")
+h.save
+
+h = Hangout.create(datetime: time_future,
+  title:'Homework',
+  description: 'Am here at Presbyterian for treatment quite often. Doing homeworks is more fun if you know you have some time to play / talk with someone afterwards', 
+  max_participants: '9', recordable: false, 
+  user_id: u4.id)
+h.tags << Tag.where(name: "Homeworks")
+h.save
+
+
+h = Hangout.create(datetime: time_future,
+  title:'Drawing',
+  description: 'Is there a place in the hospital where  can draw', 
+  max_participants: '6', recordable: false, 
+  user_id: u3.id)
+h.tags << Tag.where(name: "Drawing")
+h.save
+
+puts "ending hangouts"
