@@ -140,6 +140,9 @@ left: -114px;
   color: #333;
 }
 
+.pull_right{
+  float:right;
+}
 
 .expandIcon {color: #666;
 font-weight: bold;

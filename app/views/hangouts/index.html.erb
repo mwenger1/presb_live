@@ -20,7 +20,8 @@
   <div class="hiddenHangoutText" style="display:none;">
         <%= hangout.description %><br>
         Maximum number of participants: <%= hangout.max_participants %>
-    <%= link_to 'Edit Your Event', edit_hangout_path(hangout) %>
+    <%= link_to 'Edit Your Hangout', edit_hangout_path(hangout), class: "btn createHangout pull_right" %>
+    <div style="clear:both;"></div>
 
   </div>
   <br>
@@ -49,7 +50,8 @@
   <div class="hiddenHangoutText" style="display:none;">
         <%= hangout.description %><br>
         Maximum number of participants: <%= hangout.max_participants %>
-    <%= link_to 'Join Hangout', hangout %>
+    <%= link_to 'Join Hangout', hangout, class: "btn createHangout pull_right" %>
+    <div style="clear:both;"></div>
   </div>
   <br>
   <% end %>
@@ -75,7 +77,8 @@
   <div class="hiddenHangoutText" style="display:none;">
         <%= hangout.description %><br>
         Maximum number of participants: <%= hangout.max_participants %>
-    <%= link_to 'Add to Calendar', hangout %>
+    <%= link_to 'Add to Calendar', hangout, class: "btn createHangout pull_right" %>
+    <div style="clear:both;"></div>
   </div>
   <br>
   <% end %>
@@ -83,9 +86,7 @@
 
   <br>
 
-    <%= link_to 'Watch Past Hangouts', new_hangout_path, class:"btn createHangout" %>
-    <br>
-    <br>
-
-
-  <%= link_to 'New Hangout', new_hangout_path, class:"btn createHangout"  %>
+<div style="text-align:center;">
+    <%= link_to 'Watch Past Hangouts', "http://www.youtube.com/playlist?list=PL609967D90529BC4D", class:"btn createHangout", style:"margin-right: 40px;", :target => "_blank" %>
+  <%= link_to 'Create Your Own Hangout', new_hangout_path, class:"btn createHangout"  %>
+</div>
