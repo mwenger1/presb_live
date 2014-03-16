@@ -18,9 +18,22 @@
 <%= render 'search' %>
 
 
- <% if @community_hangouts.present? %>
+ <% if @happening_hangouts.present? %>
   <h2>Happening Events</h2>
-  <% @hangouts.each do |hangout| %>
+  <% @happening_hangouts.each do |hangout| %>
+      <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
+      <%= hangout.title %>
+      <%= hangout.max_participants %>
+      <%= link_to 'Show', hangout %>
+    </div>
+      <br>
+  <% end %>
+<% end %>
+
+
+ <% if @upcoming_hangouts.present? %>
+  <h2>Upcoming Events</h2>
+  <% @upcoming_hangouts.each do |hangout| %>
       <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
       <%= hangout.title %>
       <%= hangout.max_participants %>

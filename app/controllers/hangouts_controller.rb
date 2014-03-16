@@ -8,16 +8,23 @@ class HangoutsController < ApplicationController
     session[:user_id] = "" unless session[:user_id].present?
 
     @user_hangouts = Array.new
-    @community_hangouts = Array.new
+    @upcoming_hangouts = Array.new
+    @happening_hangouts = Array.new
+
     @hangouts.each do |hangout|
       if hangout.is_user_hangout? session[:user_id]
         @user_hangouts << hangout
       else
-        @community_hangouts << hangout
+        if hangout.is_live?
+          @happening_hangouts << hangout
+        else
+          @upcoming_hangouts << hangout
+        end
       end
     end
 
     @tags = Tag.all
+    @hangout_count = @hangouts.count - @user_hangouts.count
   end
 
   # GET /hangouts/1

@@ -15,4 +15,11 @@ class Hangout < ActiveRecord::Base
       end
     end
 
+    def is_live?
+        if self.datetime < Time.now
+            true
+        else
+            false
+        end
+    end
 end

@@ -3,7 +3,7 @@
 
   <p style="text-align:right;">
     Displaying
-    <%= pluralize(@hangouts.all.count, "hangout") %>
+    <%= pluralize(@hangout_count, "hangout") %>
     filtered by
 <!-- NEED TO ADD ALL TAGS OPTION -->
 <%= select_tag(:test, options_for_select(@tags.map { |value| [ value.name, value.id ] })) %>
