@@ -32,7 +32,7 @@ group :doc do
   gem 'sdoc', require: false
 end
 
-
+gem 'seed_dump'
 gem 'better_errors'
 gem 'binding_of_caller'
 
