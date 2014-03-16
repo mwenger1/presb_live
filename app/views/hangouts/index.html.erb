@@ -1,38 +1,14 @@
 <h1>Listing hangouts</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Datetime</th>
-      <th>Title</th>
-      <th>Max participants</th>
-      <th>Recordable</th>
-      <th>Hangout url</th>
-      <th>Description</th>
-      <th>User</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @hangouts.each do |hangout| %>
-      <tr>
-        <td><%= hangout.datetime %></td>
-        <td><%= hangout.title %></td>
-        <td><%= hangout.max_participants %></td>
-        <td><%= hangout.recordable %></td>
-        <td><%= hangout.hangout_url %></td>
-        <td><%= hangout.description %></td>
-        <td><%= hangout.user %></td>
-        <td><%= link_to 'Show', hangout %></td>
-        <td><%= link_to 'Edit', edit_hangout_path(hangout) %></td>
-        <td><%= link_to 'Destroy', hangout, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <% @hangouts.each do |hangout| %>
+      <%= hangout.datetime.strftime("%m/%d") %>
+      <%= hangout.title %>
+      <%= hangout.max_participants %>
+      <%= hangout.recordable %>
+      <%= link_to 'Show', hangout %>
+      <%= link_to 'Edit', edit_hangout_path(hangout) %>
+      <br>
+  <% end %>
 
 <br>
 
