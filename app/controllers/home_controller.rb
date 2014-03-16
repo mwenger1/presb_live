@@ -9,5 +9,9 @@ class HomeController < ApplicationController
   def intro
     @user = User.first
   end
+
+  def overview
+    render layout: false
+  end
 end
 

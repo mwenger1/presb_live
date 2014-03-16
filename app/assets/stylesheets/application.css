@@ -12,15 +12,13 @@
  *= require chosen
  *= require_tree .
  */
-.tablet img{
-  width: 100%;
-}
 .dashboard img{
   position: relative;
   top: -39px;
   left: -35px;
   width: 891px;
 }
+
 
 /*Index*/
 .mainContent{
