@@ -85,6 +85,7 @@ class HangoutsController < ApplicationController
   # GET /hangouts/new
   def new
     @hangout = Hangout.new
+    @hangout.datetime = Time.now
   end
 
   # GET /hangouts/1/edit
