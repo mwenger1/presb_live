@@ -1,48 +1,44 @@
-	<div class="rightCallouts">
-		<%= link_to 'Create a Google Hangout', new_hangout_path, class:"btn createHangout" %>
-	</div>
+  <div class="rightCallouts">
+    <%= link_to 'Create a Google Hangout', new_hangout_path, class:"btn createHangout" %></div>
 
- <% if @user_hangouts.present? %>
+  <% if @user_hangouts.present? %>
   <h2>Your Hangouts</h2>
   <% @user_hangouts.each do |hangout| %>
-      <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
-      <%= hangout.title %>
-      <%= hangout.max_participants %>
-      <%= link_to 'Show', hangout %>
-    </div>
-      <br>
+  <div class="result">
+    <%= hangout.time %>
+    <%= hangout.title %>
+    <%= hangout.max_participants %>
+    <%= link_to 'Show', hangout %></div>
+  <br>
   <% end %>
- <% end %>
+  <% end %>
 
+  <%= render 'search' %>
 
-<%= render 'search' %>
-
-
- <% if @happening_hangouts.present? %>
-  <h2>Happening Events</h2>
+  <% if @happening_hangouts.present? %>
+  <h2>Happening Hangouts</h2>
   <% @happening_hangouts.each do |hangout| %>
-      <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
-      <%= hangout.title %>
-      <%= hangout.max_participants %>
-      <%= link_to 'Show', hangout %>
-    </div>
-      <br>
+  <div class="result">
+    <%= hangout.time %>
+    <%= hangout.title %>
+    <%= hangout.max_participants %>
+    <%= link_to 'Show', hangout %></div>
+  <br>
   <% end %>
-<% end %>
+  <% end %>
 
-
- <% if @upcoming_hangouts.present? %>
-  <h2>Upcoming Events</h2>
+  <% if @upcoming_hangouts.present? %>
+  <h2>Upcoming Hangouts</h2>
   <% @upcoming_hangouts.each do |hangout| %>
-      <div class="result"><%= hangout.datetime.strftime("%m/%d") %>
-      <%= hangout.title %>
-      <%= hangout.max_participants %>
-      <%= link_to 'Show', hangout %>
-    </div>
-      <br>
+  <div class="result">
+    <%= hangout.time %>
+    <%= hangout.title %>
+    <%= hangout.max_participants %>
+    <%= link_to 'Show', hangout %></div>
+  <br>
   <% end %>
-<% end %>
+  <% end %>
 
-<br>
+  <br>
 
-<%= link_to 'New Hangout', new_hangout_path, class:"btn createHangout"  %>
+  <%= link_to 'New Hangout', new_hangout_path, class:"btn createHangout"  %>

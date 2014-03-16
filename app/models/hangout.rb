@@ -22,4 +22,12 @@ class Hangout < ActiveRecord::Base
             false
         end
     end
+
+    def time
+        if self.datetime.to_date == Date.today
+            "Today " + self.datetime.strftime("%l%p")
+        else
+            self.datetime.strftime("%-m/%d") + " " + self.datetime.strftime("%l%p")
+        end
+    end
 end
