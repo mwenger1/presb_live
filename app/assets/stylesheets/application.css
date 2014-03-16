@@ -62,6 +62,44 @@ left: -114px;
   text-decoration:none;
   margin-bottom: 40px;
 }
+.time,
+.title,
+.day{
+  display: inline;
+}
+.time{
+  font-style: italic;
+  font-size: 13px;
+  color: grey;
+  padding: 5px 10px;
+  margin-left: 5px;
+}
+.title{
+
+}
+.your .expandableHangout{
+  border-left: 4px solid #61b3e3;
+}
+.happening .expandableHangout{
+ border-left: 4px solid #5d8989; 
+}
+.upcoming .expandableHangout{
+  border-left: 4px solid #fcfad8;
+}
+.your h2{
+  background: #61b3e3;
+  padding: 10px;
+  color: #fff;
+}
+.happening h2{
+  background: #5d8989; 
+    padding: 10px;
+      color: #fff;
+}
+.upcoming h2{
+  background: #fcfad8;
+    padding: 10px;
+}
 /*Landing Page */
 /*.videoBox{
   background: url('/assets/videoBox.png') no-repeat;
@@ -183,8 +221,7 @@ left: -114px;
   font-weight:bold;
   display: block;
   line-height: 36px;
-  padding-left: 20px;
-  padding-right: 2px;
+  padding: 5px 2px 5px 20px;
   color: #333;
   font-size: 14px;
   margin-top: 2px;
@@ -197,15 +234,15 @@ left: -114px;
 
 .hangoutTitle{
   display: inline-block;
-  width: 540px;
 }
 
 .hangouts_list span {
-  padding:4px;
-  margin-right:4px;
-  background-color:white;
+  padding: 4px;
+  margin-right: 4px;
+  color: grey;
 }
-.hangouts_list:hover span {
+.hangouts_list:hover span,
+.expandableHangout:hover .time{
   color: #333;
 }
 
@@ -226,7 +263,7 @@ text-shadow: 1px 1px white;}
 font-weight: bold;
 font-size: 20px;
 float: right;
-margin-right: 12px;
+margin: 0 12px 0 10px;
 text-shadow: 1px 1px white;}
 
 .expandableHangout:hover .expandIcon {
